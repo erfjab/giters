@@ -60,6 +60,7 @@ async def get(query: types.InlineQuery):
                 text="🔍 Search Repositories", switch_inline_query_current_chat=""
             )
         )
+        keyboard.adjust(1)
         result = InlineQueryResultArticle(
             id=token_hex(5),
             title=f"📁 {repo['name'].title()}",
