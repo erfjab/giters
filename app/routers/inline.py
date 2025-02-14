@@ -43,19 +43,18 @@ async def get(query: types.InlineQuery):
             switch_pm_parameter="repo_not_found",
             cache_time=10,
         )
-
     for repo in repos:
         message_text = (
-            f"📁 <b>{repo.name}</b>\n"
-            f"👤 By: {repo.owner.name}\n"
-            f"⭐ Stars: {repo.stargazers_count}\n"
-            f"🍴 Forks: {repo.forks_count}\n"
-            f"📝 Description: {repo.description}\n"
-            f"🌐 <a href='{repo.html_url}'>Repo Link</a>"
+            f"📁 <b>{repo['name']}</b>\n"
+            f"👤 By: {repo['owner']['login']}\n"
+            f"⭐ Stars: {repo['stargazers_count']}\n"
+            f"🍴 Forks: {repo['forks_count']}\n"
+            f"📝 Description: {repo['description']}\n"
+            f"🌐 <a href='{repo['html_url']}'>Repo Link</a>"
         )
 
         keyboard = InlineKeyboardBuilder()
-        keyboard.add(InlineKeyboardButton(text="🔗 Go to Repo", url=repo.html_url))
+        keyboard.add(InlineKeyboardButton(text="🔗 Go to Repo", url=repo["html_url"]))
         keyboard.add(
             InlineKeyboardButton(
                 text="🔍 Search Repositories", switch_inline_query_current_chat=""
@@ -63,8 +62,8 @@ async def get(query: types.InlineQuery):
         )
         result = InlineQueryResultArticle(
             id=token_hex(5),
-            title=f"📁 {repo.name.title()}",
-            description=f"⭐ {repo.stargazers_count} by {repo.owner.name}",
+            title=f"📁 {repo['name'].title()}",
+            description=f"⭐ {repo['stargazers_count']} by {repo['owner']['login']}",
             input_message_content=InputTextMessageContent(message_text=message_text),
             reply_markup=keyboard.as_markup(),
             thumbnail_url="https://i.pinimg.com/originals/2a/dc/b5/2adcb5b7d4783c60ae9e57b6b7458274.jpg",
