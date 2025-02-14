@@ -71,4 +71,4 @@ async def get(query: types.InlineQuery):
         )
         results.append(result)
 
-    await query.answer(results=results[:50], cache_time=10)
+    await query.answer(results=results, cache_time=10)
