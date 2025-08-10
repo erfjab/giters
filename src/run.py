@@ -7,7 +7,7 @@ from src.handlers import setup_handlers
 
 
 async def main():
-    logging.info("Configuring bot.")
+    logging.info("Configuring Giters bot.")
     await BOT.delete_webhook()
     logging.info("Deleted bot webhook.")
     DP.include_router(setup_handlers())
