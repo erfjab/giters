@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "dotenv>=0.9.9",
-    "eiogram>=2.0.1",
+    "eiogram>=2.1.0",
     "pygithub>=2.7.0",
     "python-decouple>=3.8",
 ]
