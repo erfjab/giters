@@ -1,7 +1,0 @@
-services:
-  giters:
-    image: ghcr.io/erfjab/giters:latest
-    restart: always
-    env_file:
-      - .env
-    network_mode: "host"
