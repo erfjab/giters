@@ -200,7 +200,7 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
-.env
+*.env
 # Marimo
 marimo/_static/
 marimo/_lsp/
