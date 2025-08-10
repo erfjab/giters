@@ -5,7 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "aiogram>=3.17.0",
-    "pydantic-settings>=2.7.1",
-    "pygithub>=2.5.0",
+    "dotenv>=0.9.9",
+    "eiogram>=2.1.0",
+    "httpx>=0.28.1",
+    "python-decouple>=3.8",
 ]

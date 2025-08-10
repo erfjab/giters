@@ -1,0 +1,4 @@
+from .env import TELEGRAM_API_TOKEN, DEFAULT_THUMBNAIL
+from .tg import BOT, DP
+
+__all__ = ["TELEGRAM_API_TOKEN", "BOT", "DP", "DEFAULT_THUMBNAIL"]
