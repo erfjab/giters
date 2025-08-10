@@ -21,3 +21,5 @@ for handler in logging.root.handlers:
             fmt="[{asctime}] {levelname} {message}", datefmt="%m/%d %H:%M:%S", style="{"
         )
     )
+
+logging.getLogger("httpx").propagate = False
