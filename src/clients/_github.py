@@ -7,11 +7,12 @@ import httpx
 class GithubClient:
     @classmethod
     async def search(cls, query: str, limit: int = 10) -> List[Dict[str, Any]]:
-        url = f"https://api.github.com/search/repositories?q={query}&per_page={limit}"
+        url = "https://api.github.com/search/repositories"
+        params = {"q": f"{query} fork:true", "per_page": str(limit)}
 
         async with httpx.AsyncClient(timeout=10.0) as client:
             try:
-                response = await client.get(url=url)
+                response = await client.get(url=url, params=params)
                 response.raise_for_status()
 
                 if "X-RateLimit-Remaining" in response.headers:
